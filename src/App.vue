@@ -2,19 +2,19 @@
 
 <div>
   <input v-model="name">
-  <p v-if="name && name !== 'korn'">Hi, {{ name }}</p>
-  <p v-else-if="name === 'korn'">:D</p>
-  <p v-else>No Data</p>
-  <p v-for="x in list"> {{ x + ' ' +name }}</p>
-  <button v-on:click="sayHello">Hello</button>
-  <button @click="sayHello">@click</button>
+  <Hello v-bind:name="name"></Hello>
+  <Hello :name="name"></Hello>
 </div>
 
 
 </template>
 
 <script>
+import Hello from './Hello'
 export default {
+  components: {
+    Hello
+  },
   data () {
     return {
       name: '',
