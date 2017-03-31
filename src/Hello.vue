@@ -1,12 +1,19 @@
 <template>
   <div>
-    Hola,  {{ name }}
+  Hi, {{ name }}
+  <p ref="text">Test</p>
   </div>
-
 </template>
 
 <script>
 export default {
-  props: ['name']
+  props: {
+    name: {
+      required: true
+    }
+  },
+  mounted () {
+    $(this.$el)
+  }
 }
 </script>
